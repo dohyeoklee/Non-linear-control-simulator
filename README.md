@@ -29,7 +29,9 @@ aa
 aa
 
 ## Result
-aa
+<img src="result/state_1.png">
+<img src="result/error_1.png">
+<img src="result/sim_1.gif">
 
 ## Reference
 [1] aa
