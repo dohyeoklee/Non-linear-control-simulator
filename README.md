@@ -20,11 +20,11 @@ Dependency:
 -scipy: 1.5.2
 
 ## Algorithm
-**Dynamics**
+### Dynamics
 <img src="result/algo_1.png">
 <img src="result/algo_2.png">
 
-**Non-linear control**
+### Non-linear control
 <img src="result/algo_3.png">
 <img src="result/algo_4.png">
 
