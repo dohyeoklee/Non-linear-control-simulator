@@ -4,8 +4,8 @@ Non-linear control algorithms(inverse dynamics control, robust control, passivit
 ## Usage
 Just run below command at terminal
 ```
-git clone https://github.com/dohyeoklee/non-linear-control-simulator
-cd non-linear-control-simulator/src
+git clone https://github.com/dohyeoklee/Non-linear-control-simulator
+cd Non-linear-control-simulator/src
 python main.py -a -c="passivity adaptive" -m="tracking sine function"
 ```
 
