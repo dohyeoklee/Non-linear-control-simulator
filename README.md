@@ -20,15 +20,13 @@ Dependency:
 -scipy: 1.5.2
 
 ## Algorithm
-**dynamics**
+**Dynamics**
+<img src="result/algo_1.png">
+<img src="result/algo_2.png">
 
-aa
-
-
-
-**control**
-
-aa
+**Non-linear control**
+<img src="result/algo_3.png">
+<img src="result/algo_4.png">
 
 ## Result
 <img src="result/state_1.png">
@@ -36,4 +34,4 @@ aa
 <img src="result/sim_1.gif">
 
 ## Reference
-[1] aa
+[1] Robot Dynamics and Control, Second Edition, Mark W. Spong, Seth Hutchinson, and M. Vidyasagar
