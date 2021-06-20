@@ -1,5 +1,5 @@
 # Non-linear-control-simulator
-Non-linear control algorithms(robust control, sliding mode control, etc..) simulation for two-arm manipulator, coded by python
+Non-linear control algorithms(inverse dynamics control, robust control, passivity-based robust control, passivity-based adaptive control, sliding mode control) simulator for two-arm manipulator, coded by python
 
 ## Usage
 Just run below command at terminal
