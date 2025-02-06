@@ -70,12 +70,13 @@ class Kinematics(object):
     L_2 = 2*L_c2
     I_1 = (m_1*L_1**2)/3
     I_2 = (m_2*L_2**2)/3
-    G = 9.8
-
+    g = 9.807
+    #9.80665 m/s2 (32.1740 ft/s2) 
+    #G = 6674301*10−11 m3 kg−1 s−2, normal gravity at the equator, 9.7803267715 m/s2
     def theta_nominal(self):
         '''
         Returns nominal regression parameter, theta, 
-        nomial means that modeling of dynamics equation(D,C,g) is ideal
+        nominal means that modeling of dynamics equation(D,C,g) is ideal
         theta only can be changed by changing physical parameter of robot(mass,length, etc..)
     
         Parameters
@@ -312,8 +313,8 @@ class Dynamics(Kinematics):
         q_1 = self.X[0,0]
         q_2 = self.X[1,0]
 
-        g_1 = (self.m_1*self.L_c1+self.m_2*self.L_1)*self.G*np.cos(q_1) + self.m_2*self.L_c2*self.G
-        g_2 = self.m_2*self.L_c2*self.G*np.cos(q_1+q_2)
+        g_1 = (self.m_1*self.L_c1+self.m_2*self.L_1)*self.g*np.cos(q_1) + self.m_2*self.L_c2*self.g
+        g_2 = self.m_2*self.L_c2*self.g*np.cos(q_1+q_2)
         return np.array([[g_1],[g_2]])
 
     def Y_passivity(self,a,v):
@@ -352,14 +353,14 @@ class Dynamics(Kinematics):
         y_11 = a[0,0]
         y_12 = (2*a[0,0]+a[1,0])*np.cos(q2) - (v[1,0]**2+2*v[0,0]*v[1,0])*np.sin(q2)
         y_13 = v[1,0]
-        y_14 = self.G*np.cos(q1)
-        y_15 = self.G*np.cos(q1+q2)
+        y_14 = self.g*np.cos(q1)
+        y_15 = self.g*np.cos(q1+q2)
 
         y_21 = 0
         y_22 = a[0,0]*np.cos(q2) + v[0,0]**2*np.sin(q2)
         y_23 = a[0,0]+a[1,0]
         y_24 = 0
-        y_25 = self.G*np.cos(q1+q2)
+        y_25 = self.g*np.cos(q1+q2)
 
         Y = np.array([[y_11,y_12,y_13,y_14,y_15],[y_21,y_22,y_23,y_24,y_25]])
         
